@@ -9,4 +9,5 @@ import (
 func main() {
 	u := mod1.NewUser("test")
 	fmt.Println(u.SayHi())
+	fmt.Println(u.SayBye())
 }
