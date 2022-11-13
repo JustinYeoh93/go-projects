@@ -1,0 +1,4 @@
+github.com/JustinYeoh93/private-go-modules v0.0.0-20221113071322-62e89701e753 h1:X+iiCOguME8aJhWJmZ/3mnYtUwkkae+C9s5fmefK3GU=
+github.com/JustinYeoh93/private-go-modules v0.0.0-20221113071322-62e89701e753/go.mod h1:CuaCUP/zRFJAaCVC27kLpBauP+0L2xee4wx97A+3JwA=
+golang.org/x/text v0.4.0 h1:BrVqGRd7+k1DiOgtnFvAkoQEWQvBc25ouMJM6429SFg=
+golang.org/x/text v0.4.0/go.mod h1:mrYo+phRRbMaCq/xk9113O4dZlRixOauAjOtrjsXDZ8=
