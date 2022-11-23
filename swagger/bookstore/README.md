@@ -9,3 +9,6 @@ This section we will go into the Swagger and touch on a bit of OpenAPI.
     - swag init
     - import the docs package into the main file, `import _ "<package-name>/docs"
     - add swagger routes to the docs route, router.GET("/docs/*any", ginSwagger.WrapHandler(swaggerFiles.Handler))
+
+# Link
+https://sntshk.medium.com/how-to-integrate-swagger-ui-in-go-backend-gin-edition-b69546cd1149
