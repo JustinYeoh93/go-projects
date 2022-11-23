@@ -9,10 +9,25 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// GetBooks godoc
+// @summary Get books array
+// @Description responds with the list of all books as JSON.
+// @Tags books
+// @Produce json
+// @Success 200 {array} models.Book
+// @Router /books [get]
 func GetBooks(c *gin.Context) {
 	c.JSON(http.StatusOK, db.Books)
 }
 
+// GetBookByISBN godoc
+// @Summary Get single book by isbn
+// @Description Returns the book whose ISBN value matches the isbn
+// @Tags books
+// @Produce json
+// @Param isbn path string true "search book by isbn"
+// @Success 200 {object} models.Book
+// @Router /books/{isbn} [get]
 func GetBookByISBN(c *gin.Context) {
 	isbn := c.Param("isbn")
 
@@ -26,6 +41,14 @@ func GetBookByISBN(c *gin.Context) {
 	c.JSON(http.StatusNotFound, fmt.Sprintf("book with isbn '%s' not found", isbn))
 }
 
+// AddBook godoc
+// @Summary Add a single book
+// @Description Add a book to the server to be stored in the database
+// @Tags books
+// @Produce json
+// @Param book body models.Book true "Book JSON"
+// @Success 200 {object} models.Book
+// @Router /books [post]
 func AddBook(c *gin.Context) {
 	var book models.Book
 

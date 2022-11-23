@@ -1,0 +1,79 @@
+basePath: /api/v1
+definitions:
+  models.Book:
+    properties:
+      author:
+        type: string
+      isbn:
+        type: string
+      title:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact:
+    email: justin@justinyeoh.dev
+    name: Justin
+    url: https://facebook.com
+  description: A book management service API in Go using Gin framework.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: https://abc.com
+  title: Gingo Book Service
+  version: "1.0"
+paths:
+  /books:
+    get:
+      description: responds with the list of all books as JSON.
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.Book'
+            type: array
+      summary: Get books array
+      tags:
+      - books
+    post:
+      description: Add a book to the server to be stored in the database
+      parameters:
+      - description: Book JSON
+        in: body
+        name: book
+        required: true
+        schema:
+          $ref: '#/definitions/models.Book'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Book'
+      summary: Add a single book
+      tags:
+      - books
+  /books/{isbn}:
+    get:
+      description: Returns the book whose ISBN value matches the isbn
+      parameters:
+      - description: search book by isbn
+        in: path
+        name: isbn
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/models.Book'
+      summary: Get single book by isbn
+      tags:
+      - books
+swagger: "2.0"
